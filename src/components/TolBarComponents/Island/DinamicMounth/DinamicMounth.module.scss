@@ -1,0 +1,38 @@
+@use "../../../../scss/utils" as *;
+@use "../../../../scss/vars" as *;
+
+.mounth {
+	width: 100%;
+	border-radius: 40px;
+	padding: 2px;
+	opacity: 1;
+	display: flex;
+	align-items: center;
+	transition: opacity 0.3s ease-in-out 0s;
+	transition: 0.3s ease-in-out;
+	justify-content: space-between;
+}
+.arrow {
+	height: 100%;
+	aspect-ratio: 1;
+	background: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	img {
+		transform: translateX(1px);
+		height: 38%;
+		pointer-events: none;
+	}
+}
+.text {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mounthHiden {
+	opacity: 0;
+}

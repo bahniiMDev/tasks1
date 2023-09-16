@@ -1,0 +1,88 @@
+@use "./scss/utils" as *;
+@use "./scss/vars" as *;
+
+.gray1-bg {
+	background: $gray1;
+}
+.gray1-co {
+	color: $gray1;
+}
+.gray2-bg {
+	background: $gray2;
+}
+.gray2-co {
+	color: $gray2;
+}
+.black1-bg {
+	background: $black1;
+}
+.black1-co {
+	color: $black1;
+}
+.blue1-bg {
+	background: $blue1;
+}
+.blue1-co {
+	color: $blue1;
+}
+.blue2-bg {
+	background: $blue2;
+}
+.white-co {
+	color: #fff;
+}
+
+//height
+.height_1 {
+	@include ad-value("height", 38, 36, 0, 1600, 1);
+}
+.height_2 {
+	@include ad-value("height", 32, 30, 0, 1600, 1);
+}
+//
+
+//font-size
+.size_1 {
+	font-weight: 500;
+	@include ad-value("font-size", 12.5, 11.4, 0, 1600, 1);
+}
+.size_2 {
+	font-weight: 500;
+	@include ad-value("font-size", 11.6, 10.2, 0, 1600, 1);
+}
+.size_3 {
+	font-weight: 500;
+	@include ad-value("font-size", 10, 9, 0, 1600, 1);
+}
+.size_4 {
+	@include ad-value("font-size", 11, 9.35, 0, 1600, 1);
+	font-weight: 500;
+}
+//
+
+//margin
+.mg_b_1 {
+	@include ad-value("margin-bottom", 6, 5, 0, 1600, 1);
+}
+.mg_r_1 {
+	@include ad-value("margin-right", 6, 5, 0, 1600, 1);
+}
+.mg_bt_1 {
+	@include ad-value("margin-bottom", 13, 9, 0, 1600, 1);
+	@include ad-value("margin-top", 13, 9, 0, 1600, 1);
+}
+.mg_bt_2 {
+	@include ad-value("margin-bottom", 6, 5, 0, 1600, 1);
+	@include ad-value("margin-top", 6, 5, 0, 1600, 1);
+}
+//
+
+//border
+.border-mini1 {
+	@include ad-value("border-radius", 9, 8, 0, 1600, 1);
+}
+
+//gap
+.gap_1 {
+	@include ad-value("gap", 6, 5, 0, 1600, 1);
+}

@@ -1,0 +1,19 @@
+@use "../../scss/utils" as *;
+@use "../../scss/vars" as *;
+
+.title {
+	@include ad-value("font-size", 22, 17, 0, 1600, 1);
+	font-weight: 600;
+	color: #000;
+}
+
+.titleCont {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	letter-spacing: -0.5px;
+	word-spacing: 2px;
+}
+img {
+	@include ad-value("height", 28, 24, 0, 1600, 1);
+}

@@ -1,0 +1,15 @@
+@use "../../../scss/utils" as *;
+@use "../../../scss/vars" as *;
+
+.cont {
+	height: 100%;
+	aspect-ratio: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.rect {
+	display: block;
+	border-radius: 6px;
+	aspect-ratio: 1;
+}

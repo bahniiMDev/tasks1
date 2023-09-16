@@ -1,0 +1,56 @@
+@use "../../../../scss/utils" as *;
+@use "../../../../scss/vars" as *;
+
+.regim {
+	width: 100%;
+	display: flex;
+}
+
+.selectList {
+	width: 100%;
+	box-shadow: 0px 0px 0px 1px lightgray inset;
+	display: flex;
+	background: transparent;
+
+	align-items: center;
+	justify-content: flex-start;
+	height: 100%;
+}
+.text {
+	width: 100%;
+	color: gray;
+	flex: 1 auto;
+}
+
+.buttonRegim {
+	box-shadow: 0px 0px 0px 1px lightgray inset;
+	height: 100%;
+	aspect-ratio: 1;
+	display: flex;
+	background: #fff;
+	justify-content: center;
+	transition: ease-in-out 0.4s;
+	align-items: center;
+	svg {
+		pointer-events: none;
+		height: 50%;
+	}
+}
+
+.buttonRegimActive {
+	box-shadow: 0px 0px 0px 0px rgb(255, 255, 255) inset;
+	background: $black1;
+}
+
+.contIcon {
+	height: 100%;
+	aspect-ratio: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	img {
+		rotate: 90deg;
+		height: 34%;
+		pointer-events: none;
+	}
+}

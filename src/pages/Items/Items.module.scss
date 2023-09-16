@@ -1,0 +1,13 @@
+@use "../../scss/utils" as *;
+@use "../../scss/vars" as *;
+
+.container {
+	width: 100%;
+	max-width: 600px;
+}
+.task {
+	background: #fff;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
