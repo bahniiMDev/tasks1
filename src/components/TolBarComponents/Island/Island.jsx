@@ -7,69 +7,71 @@ import ButtonBig from "../ButtonBig/ButtonBig";
 import RegimState from "./RegimState/RegimState";
 import InputCustom from "./InputCustom/InputCustom";
 import {
-	animationStane,
-	clickBorder,
-	clickResize,
-	setRegim,
+  animationStane,
+  clickBorder,
+  clickResize,
+  setRegim,
 } from "../../../store/slices/tolBarSlice";
 import { setItem } from "../../../store/slices/taskInfoCreateSlice";
 import DinamicMounth from "./DinamicMounth/DinamicMounth";
 
 const Island = () => {
-	const { animClick, resize, border } = useSelector((state) => state.tolBar);
-	const refFake = React.useRef(null);
+  const regim = useSelector((state) => state.tolBar.regimIslandMenu);
 
-	const disp = useDispatch();
-	React.useEffect(() => {
-		disp(clickBorder(Boolean(localStorage.getItem("border"))));
-		disp(clickResize(Boolean(localStorage.getItem("resize"))));
-	}, []);
+  const { animClick, resize, border } = useSelector((state) => state.tolBar);
+  const refFake = React.useRef(null);
 
-	const wrapeprStateFunction = () => {
-		if (border) return `${clas.wrapper} ${clas.wrapperPadding}`;
-		return clas.wrapper;
-	};
-	const dinamicMenuStateFunction = () => {
-		if (animClick)
-			return `${clas.dinamicIslandMenu} ${clas.dinamicIslandMenuActive}`;
-		return clas.dinamicIslandMenu;
-	};
+  const disp = useDispatch();
+  React.useEffect(() => {
+    disp(clickBorder(Boolean(localStorage.getItem("border"))));
+    disp(clickResize(Boolean(localStorage.getItem("resize"))));
+  }, []);
 
-	const fakeDinamicIsland = () => {
-		if (resize)
-			return `${clas.dinamicIslandCont} ${clas.dinamicIslandContResize}`;
-		return clas.dinamicIslandCont;
-	};
+  const wrapeprStateFunction = () => {
+    if (border) return `${clas.wrapper} ${clas.wrapperPadding}`;
+    return clas.wrapper;
+  };
+  const dinamicMenuStateFunction = () => {
+    if (animClick)
+      return `${clas.dinamicIslandMenu} ${clas.dinamicIslandMenuActive}`;
+    return clas.dinamicIslandMenu;
+  };
 
-	const clickCreate = () => {
-		disp(setItem());
-		disp(animationStane(false));
-	};
+  const fakeDinamicIsland = () => {
+    if (resize)
+      return `${clas.dinamicIslandCont} ${clas.dinamicIslandContResize}`;
+    return clas.dinamicIslandCont;
+  };
 
-	return (
-		<div className={wrapeprStateFunction()}>
-			<div className={fakeDinamicIsland()}>
-				<div className={dinamicMenuStateFunction()}>
-					<InputCustom />
-					<RegimState />
-					{/* <DinamicMounth /> */}
+  const clickCreate = () => {
+    disp(setItem());
+    disp(animationStane(false));
+  };
 
-					<DinamicMenuBlock refFake={refFake} />
-					<ButtonBig
-						onCLickButton={() => disp(setRegim(3))}
-						text="Set Date"
-						anotherStyles="height_1 size_1 mg_b_1 blue2-bg blue1-co"
-					/>
-					<ButtonBig
-						onCLickButton={clickCreate}
-						text="Create"
-						anotherStyles="height_1 size_1 blue1-bg white-co"
-					/>
-				</div>
-				<DinamicIsland textValue="Create new task" />
-			</div>
-		</div>
-	);
+  return (
+    <div className={wrapeprStateFunction()}>
+      <div className={fakeDinamicIsland()}>
+        <div className={dinamicMenuStateFunction()}>
+          <InputCustom />
+          <RegimState />
+          {/* <DinamicMounth /> */}
+
+          <DinamicMenuBlock refFake={refFake} />
+          <ButtonBig
+            onCLickButton={() => disp(setRegim(regim === 1 ? 3 : 1))}
+            text="Set Date"
+            anotherStyles="height_1 size_1 mg_b_1 blue2-bg blue1-co"
+          />
+          <ButtonBig
+            onCLickButton={clickCreate}
+            text="Create"
+            anotherStyles="height_1 size_1 blue1-bg white-co"
+          />
+        </div>
+        <DinamicIsland textValue="Create new task" />
+      </div>
+    </div>
+  );
 };
 
 export default Island;

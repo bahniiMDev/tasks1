@@ -2,23 +2,48 @@
 @use "../../../../../scss/vars" as *;
 
 .container {
-	width: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	grid-template-rows: repeat(6, 1fr);
-	grid-auto-flow: column;
-	padding: 0 10%;
-	@include ad-value("gap", 8, 5, 0, 1600, 1);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  padding: 0 7%;
+  cursor: pointer;
+  pointer-events: all;
+  @include ad-value("gap", 8, 5, 0, 1600, 1);
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100px;
+    width: 100%;
+    aspect-ratio: 1;
+    height: 100%;
+    opacity: 1;
+    scale: 1;
+    cursor: default;
+
+    @media (any-hover: hover) {
+      cursor: pointer;
+    }
+  }
+
+  .itemOk {
+    color: gray;
+    background: $gray1;
+  }
+
+  .itemHidden {
+    scale: 0;
+    opacity: 0;
+  }
+
+  .itemSelect {
+    background: $blue1 !important;
+  }
 }
-.item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 100px;
-	width: 100%;
-	aspect-ratio: 1;
-	height: 100%;
+.contNone {
+  pointer-events: none;
 }
