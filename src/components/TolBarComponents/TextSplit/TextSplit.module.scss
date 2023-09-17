@@ -2,7 +2,7 @@
 @use "../../../scss/vars" as *;
 
 .text {
-	@include ad-value("font-size", 13, 11.8, 0, 1600, 1);
+	@include ad-value("font-size", 13.1, 12, 0, 1600, 1);
 	flex: 1 auto;
 	display: flex;
 	align-items: center;

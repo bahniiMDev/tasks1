@@ -2,7 +2,7 @@
 @use "../../../scss/vars" as *;
 
 .increment {
-	@include ad-value("height", 12, 11, 0, 1600, 1);
+	@include ad-value("height", 13, 11, 0, 1600, 1);
 	position: relative;
 	aspect-ratio: 1;
 	display: flex;

@@ -34,25 +34,25 @@
 
 //height
 .height_1 {
-	@include ad-value("height", 38, 36, 0, 1600, 1);
+	@include ad-value("height", 42, 37, 0, 1600, 1);
 }
 .height_2 {
-	@include ad-value("height", 32, 30, 0, 1600, 1);
+	@include ad-value("height", 35, 31, 0, 1600, 1);
 }
 //
 
 //font-size
 .size_1 {
 	font-weight: 500;
-	@include ad-value("font-size", 12.5, 11.4, 0, 1600, 1);
+	@include ad-value("font-size", 13, 11.4, 0, 1600, 1);
 }
 .size_2 {
 	font-weight: 500;
-	@include ad-value("font-size", 11.6, 10.2, 0, 1600, 1);
+	@include ad-value("font-size", 12.5, 10.2, 0, 1600, 1);
 }
 .size_3 {
 	font-weight: 500;
-	@include ad-value("font-size", 10, 9, 0, 1600, 1);
+	@include ad-value("font-size", 10.5, 9.5, 0, 1600, 1);
 }
 .size_4 {
 	@include ad-value("font-size", 11, 9.35, 0, 1600, 1);

@@ -2,7 +2,7 @@
 @use "../../../scss/vars" as *;
 
 .wrapper {
-	@include ad-value("padding", 10, 8, 0, 1600, 1);
+	@include ad-value("padding", 12, 10, 0, 1600, 1);
 	padding-top: 0;
 	width: 100%;
 	position: absolute;
