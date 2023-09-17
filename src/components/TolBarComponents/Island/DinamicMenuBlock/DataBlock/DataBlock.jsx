@@ -3,7 +3,7 @@ import clas from "./DataBlock.module.scss";
 import { useSelector } from "react-redux";
 
 const DataBlock = React.forwardRef((_, ref) => {
-  const arr = [...Array(30)].map((_, i) => i);
+  const arr = [...Array(42)].map((_, i) => i);
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
 
   const itemTagDisabledFunction = (index) => {
@@ -27,19 +27,19 @@ const DataBlock = React.forwardRef((_, ref) => {
 
   return (
     <div
-      className={`${clas.container} ${regim !== 3 && clas.contNone}`}
+      className={`${clas.container} ${regim !== 3 && clas.contNone} gap_1`}
       ref={ref}>
       {arr.map((item, index) => (
         <span
           className={`${itemTagDisabledFunction(
             index
-          )} height_2 blue2-bg blue1-co size_4`}
+          )} blue2-bg blue1-co size_4 height_3`}
           key={index}
           style={{
             transition: `scale 0.5s ease ${`${
               index * 0.01
             }s`}, opacity 0.5s ease ${`${index * 0.02}s`},
-								background 0.4s ease 0s,color 0.4s ease 0s`,
+				background 0.4s ease 0s,color 0.4s ease 0s`,
           }}>
           {item + 1}
         </span>

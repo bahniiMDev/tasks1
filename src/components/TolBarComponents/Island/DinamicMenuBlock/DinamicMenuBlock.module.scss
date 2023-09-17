@@ -7,6 +7,9 @@
   height: 100%;
   transition: 0.5s ease-in-out 0.2s;
   transition-property: height, margin, opacity;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 200px;
 }
 
@@ -50,6 +53,7 @@
     align-items: center;
     opacity: 1;
     scale: 1;
+    will-change: scale, opacity;
     cursor: default;
 
     @media (any-hover: hover) {
