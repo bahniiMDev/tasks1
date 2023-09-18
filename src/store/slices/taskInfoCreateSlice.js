@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	timeComplitionFrom: "",
 	timeComplitionEnd: "",
+	date: "",
 	text: "",
 	items: [],
 };
@@ -27,6 +28,9 @@ export const taskInfoCreateSlice = createSlice({
 		setValue: (state, action) => {
 			state.text = action.payload;
 		},
+		setDate: (state, action) => {
+			state.date = action.payload;
+		},
 	},
 });
 
@@ -35,6 +39,7 @@ export const {
 	setItem,
 	setTimeComplitionFrom,
 	setTimeComplitionEnd,
+	setDate
 } = taskInfoCreateSlice.actions;
 
 export default taskInfoCreateSlice.reducer;

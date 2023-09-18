@@ -16,6 +16,7 @@ const DinamicMenuBlock = () => {
   const arr1 = [...Array(24)].map((_, i) => i);
   const arrayInActiveTime = [1, 23, 18];
   const ref = React.useRef(null);
+  const date = useSelector((state) => state.taskInfo.date);
   const dataRef = React.useRef(null);
   //
 
@@ -25,17 +26,25 @@ const DinamicMenuBlock = () => {
       return `${clas.time} ${clas.timeHidden} `;
     }
     if (
-      arrayInActiveTime.includes(index) ||
       index < timeComplitionFrom ||
       (index != (timeComplitionEnd == "" ? index : timeComplitionEnd) &&
-        index != (timeComplitionFrom == "" ? index : timeComplitionFrom)) ||
-      Number(index) <= Number(new Date().getHours())
+        index != (timeComplitionFrom == "" ? index : timeComplitionFrom))
     ) {
       return `${clas.time} ${clas.timeOk} size_4`;
     }
     if (timeComplitionFrom == index || timeComplitionEnd == index) {
       return `${clas.time} ${clas.timeSelect} size_4 white-co`;
     }
+    if (date > Number(new Date().getDate())) {
+      return `${clas.time} size_4 blue1-bg`;
+    }
+    if (
+      arrayInActiveTime.includes(index) ||
+      Number(index) <= Number(new Date().getHours())
+    ) {
+      return `${clas.time} ${clas.timeOk} size_4`;
+    }
+
     return `${clas.time} size_4 blue1-bg`;
   };
   const timeTagOnClickFunction = (index) => {

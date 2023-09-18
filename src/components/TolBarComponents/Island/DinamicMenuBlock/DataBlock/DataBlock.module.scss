@@ -27,6 +27,7 @@
   .itemOk {
     color: gray;
     background: $gray1;
+    pointer-events: none;
   }
 
   .itemHidden {

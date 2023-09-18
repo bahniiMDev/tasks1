@@ -4,7 +4,7 @@ const initialState = {
 	resize: false,
 	border: false,
 	animClick: false,
-	regimIslandMenu: 1,
+	regimIslandMenu: 3,
 };
 
 export const tolBarSlice = createSlice({

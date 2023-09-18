@@ -58,8 +58,8 @@ const Island = () => {
 
           <DinamicMenuBlock refFake={refFake} />
           <ButtonBig
-            onCLickButton={() => disp(setRegim(regim === 1 ? 3 : 1))}
-            text="Set Date"
+            onCLickButton={() => disp(setRegim(regim === 3 ? 1 : 3))}
+            text={`Set ${regim !== 3 ? "Date" : "Time"}`}
             anotherStyles="height_1 size_1 mg_b_1 blue2-bg blue1-co"
           />
           <ButtonBig
