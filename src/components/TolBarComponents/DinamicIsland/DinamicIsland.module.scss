@@ -14,10 +14,10 @@
   will-change: auto;
   overflow: hidden;
   position: relative;
-  cursor: default;
+  cursor: pointer;
 
-  @media (hover: hover) {
-    cursor: pointer;
+  @media (hover: none) and (pointer: coarse) {
+    cursor: default;
   }
 }
 
