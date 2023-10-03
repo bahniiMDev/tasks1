@@ -17,7 +17,7 @@
   cursor: pointer;
 
   @media (hover: none) and (pointer: coarse) {
-    cursor: default;
+    cursor: default !important;
   }
 }
 
