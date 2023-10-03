@@ -2,14 +2,31 @@
 @use "../../../scss/vars" as *;
 
 .cont {
-	height: 100%;
-	aspect-ratio: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  height: 100%;
+  aspect-ratio: 1;
+
+  display: flex;
+  transition: 0.8s ease 0s;
+  justify-content: center;
+  align-items: center;
 }
 .rect {
-	display: block;
-	border-radius: 6px;
-	aspect-ratio: 1;
+  display: block;
+  transition: aspect-ratio 0.8s $ease-content 0s, background,
+    box-shadow 0.8s ease 0s;
+  border-radius: 6px;
+  aspect-ratio: 1;
+  display: flex;
+  transform-origin: 0% 0%;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+}
+
+.contActive {
+  aspect-ratio: 3/1;
+  .rect {
+    aspect-ratio: 5.25/1;
+    background: $gray1;
+  }
 }

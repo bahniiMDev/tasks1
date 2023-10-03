@@ -13,7 +13,6 @@ import {
   setRegim,
 } from "../../../store/slices/tolBarSlice";
 import { setItem } from "../../../store/slices/taskInfoCreateSlice";
-import DinamicMounth from "./DinamicMounth/DinamicMounth";
 
 const Island = () => {
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);

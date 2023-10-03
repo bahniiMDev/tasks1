@@ -6,6 +6,7 @@ import {
   setTimeComplitionFrom,
 } from "../../../../store/slices/taskInfoCreateSlice";
 import DataBlock from "./DataBlock/DataBlock";
+import ListFilters from "./ListFilters/ListFilters";
 
 const DinamicMenuBlock = () => {
   const disp = useDispatch();
@@ -18,6 +19,8 @@ const DinamicMenuBlock = () => {
   const ref = React.useRef(null);
   const date = useSelector((state) => state.taskInfo.date);
   const dataRef = React.useRef(null);
+  const filterRef = React.useRef(null);
+
   //
 
   //
@@ -99,6 +102,9 @@ const DinamicMenuBlock = () => {
     if (regim === 3) {
       return `${dataRef.current?.offsetHeight}px`;
     }
+    if (regim === 4) {
+      return `${filterRef.current?.offsetHeight}px`;
+    }
   };
   //
 
@@ -106,7 +112,7 @@ const DinamicMenuBlock = () => {
   return (
     <div
       className={`${dinamicBlockFunctionState()} ${
-        regim === 2 ? "mg_bt_2" : "mg_bt_1"
+        regim === 2 || regim === 4 ? "mg_bt_2" : "mg_bt_1"
       }`}
       style={{
         height: dinamicTimeFunctionHeight(),
@@ -141,6 +147,7 @@ const DinamicMenuBlock = () => {
           </span>
         ))}
       </div>
+      <ListFilters ref={filterRef} />
       <DataBlock ref={dataRef} />
     </div>
   );

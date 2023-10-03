@@ -1,0 +1,61 @@
+@use "../../../../../scss/utils" as *;
+@use "../../../../../scss/vars" as *;
+
+.container {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  pointer-events: none;
+  transition: 0.4s ease-in-out 0s;
+}
+.containerActive {
+  opacity: 1;
+  pointer-events: all;
+}
+.item {
+  cursor: pointer;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.text {
+  cursor: pointer;
+  flex: 1 1 auto;
+}
+.contImg {
+  cursor: pointer;
+  height: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  height: 50%;
+  pointer-events: none;
+  aspect-ratio: 1;
+}
+.contCount {
+  height: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55%;
+  pointer-events: none;
+  aspect-ratio: 1;
+  border-radius: 50px;
+  color: gray;
+}

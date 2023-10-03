@@ -12,7 +12,7 @@ const InputCustom = () => {
 
   return (
     <div className={`${clas.wrapper} border-mini1 gray1-bg height_1 mg_b_1`}>
-      <Rect color={"lightgray"} bd={1} regim="big" />
+      <Rect color={"lightgray"} bd={1.5} regim="big" />
       <input
         onChange={(e) => {
           disp(setValue(e.target.value));
