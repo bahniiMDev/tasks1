@@ -16,7 +16,12 @@ const ListFilters = React.forwardRef((_, ref) => {
           : clas.container
       }>
       <div
-        className={`${clas.item} height_1 border-mini1  mg_b_1 black1-co size_1`}>
+        style={{
+          transitionDelay: regim === 4 ? "0.1s" : "0.3s",
+        }}
+        className={`${
+          regim === 4 ? `${clas.item} ${clas.itemActive}` : clas.item
+        } height_1 border-mini1  mg_b_1 black1-co size_1`}>
         <span className={clas.contImg}>
           <img src={Home} className={clas.img} />
         </span>
@@ -26,7 +31,38 @@ const ListFilters = React.forwardRef((_, ref) => {
         </div>
       </div>
       <div
-        className={`${clas.item} height_1 border-mini1  mg_b_1 black1-co size_1`}>
+        style={{
+          transitionDelay: regim === 4 ? "0.2s" : "0.2s",
+        }}
+        className={`${
+          regim === 4 ? `${clas.item} ${clas.itemActive}` : clas.item
+        } height_1 border-mini1  mg_b_1 black1-co size_1`}>
+        <Rect color="#d56dfb" bd={1.5} />
+        <p className={clas.text}>Personal</p>
+        <div className={clas.contCount}>
+          <span className={`${clas.count} gray1-bg size_2`}>4</span>
+        </div>
+      </div>
+      <div
+        style={{
+          transitionDelay: regim === 4 ? "0.3s" : "0.1s",
+        }}
+        className={`${
+          regim === 4 ? `${clas.item} ${clas.itemActive}` : clas.item
+        } height_1 border-mini1  mg_b_1 black1-co size_1`}>
+        <Rect color="#d56dfb" bd={1.5} />
+        <p className={clas.text}>Personal</p>
+        <div className={clas.contCount}>
+          <span className={`${clas.count} gray1-bg size_2`}>4</span>
+        </div>
+      </div>
+      <div
+        style={{
+          transitionDelay: regim === 4 ? "0.4s" : "0s",
+        }}
+        className={`${
+          regim === 4 ? `${clas.item} ${clas.itemActive}` : clas.item
+        } height_1 border-mini1  mg_b_1 black1-co size_1`}>
         <Rect color="#d56dfb" bd={1.5} />
         <p className={clas.text}>Personal</p>
         <div className={clas.contCount}>

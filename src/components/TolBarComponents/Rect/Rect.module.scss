@@ -6,13 +6,13 @@
   aspect-ratio: 1;
 
   display: flex;
-  transition: 0.8s ease 0s;
+  transition: 0.8s ease 0.4s;
   justify-content: center;
   align-items: center;
 }
 .rect {
   display: block;
-  transition: aspect-ratio 0.8s $ease-content 0s, background,
+  transition: aspect-ratio 0.8s cubic-bezier(0.5, -0.4, 0.4, 1) 0s, background,
     box-shadow 0.8s ease 0s;
   border-radius: 6px;
   aspect-ratio: 1;
@@ -24,9 +24,14 @@
 }
 
 .contActive {
-  aspect-ratio: 3/1;
+  transition: 0.48 ease 0s;
+
+  padding-left: 4%;
+
   .rect {
     aspect-ratio: 5.25/1;
     background: $gray1;
+    transition: aspect-ratio 0.8s cubic-bezier(0.5, -0.4, 0.4, 1) 0.2s,
+      background, box-shadow 0.8s ease 0s;
   }
 }

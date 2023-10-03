@@ -115,6 +115,7 @@ const DinamicMenuBlock = () => {
         regim === 2 || regim === 4 ? "mg_bt_2" : "mg_bt_1"
       }`}
       style={{
+        transitionDelay: regim === 4 && "0.4s",
         height: dinamicTimeFunctionHeight(),
         opacity: ref.current?.offsetHeight ? 1 : 0,
       }}>
