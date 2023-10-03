@@ -15,7 +15,8 @@
   overflow: hidden;
   position: relative;
   cursor: default;
-  @media (any-hover: hover) {
+
+  @media (hover: hover) {
     cursor: pointer;
   }
 }
