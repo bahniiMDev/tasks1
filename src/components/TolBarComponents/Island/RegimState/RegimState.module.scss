@@ -24,6 +24,10 @@
     transition: ease-in-out 0.2s;
   }
   .contIcon {
+    cursor: default;
+    @media (hover: hover) and (pointer: fine) {
+      cursor: pointer;
+    }
     svg {
       rotate: -90deg;
     }
@@ -45,6 +49,10 @@
   justify-content: center;
   transition: ease-in-out 0.4s;
   align-items: center;
+  cursor: default;
+  @media (hover: hover) and (pointer: fine) {
+    cursor: pointer;
+  }
   svg {
     pointer-events: none;
     height: 50%;

@@ -56,8 +56,7 @@
     scale: 1;
     will-change: scale, opacity;
     cursor: default;
-
-    @media (any-hover: hover) {
+    @media (hover: hover) and (pointer: fine) {
       cursor: pointer;
     }
   }

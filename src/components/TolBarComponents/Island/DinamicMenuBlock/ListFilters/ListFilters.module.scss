@@ -20,7 +20,10 @@
   pointer-events: all;
 }
 .item {
-  cursor: pointer;
+  cursor: default;
+  @media (hover: hover) and (pointer: fine) {
+    cursor: pointer;
+  }
   width: 100%;
   justify-content: space-between;
   display: flex;
