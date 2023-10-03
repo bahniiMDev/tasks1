@@ -64,6 +64,7 @@
   .timeOk {
     color: gray;
     background: $gray1;
+    pointer-events: none;
   }
 
   .timeHidden {

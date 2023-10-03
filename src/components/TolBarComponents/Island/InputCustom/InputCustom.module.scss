@@ -2,35 +2,51 @@
 @use "../../../../scss/vars" as *;
 
 .wrapper {
-	display: flex;
-	align-items: center;
-	position: relative;
-	justify-content: space-between;
-	width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .input {
-	flex: 1 auto;
-	width: 100%;
-	height: 100%;
+  flex: 1 auto;
+  width: 100%;
+  height: 100%;
 }
-.cont {
-	display: flex;
-	right: 0;
-	justify-content: center;
-	height: 100%;
-	align-items: center;
-	padding: 6px;
-	position: absolute;
+.wrapper2 {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  height: 100%;
+  padding: 6px;
+  gap: 4px;
+  display: flex;
 }
+
 .tag {
-	height: 100%;
-	display: flex;
-	white-space: nowrap;
-	justify-content: center;
-	@include ad-value("padding", 12, 11, 0, 1600, 1);
-	align-items: center;
-	border-radius: 20px;
-	background: #fff;
-	color: gray;
+  transform: opacity, scale 0.35s $ease 0s;
+  height: 100%;
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+  @include ad-value("padding", 12, 11, 0, 1600, 1);
+  align-items: center;
+  border-radius: 20px;
+  background: #fff;
+  color: gray;
+}
+.tagCircle {
+  aspect-ratio: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background: #fff;
+  color: gray;
+}
+
+.tagHidden {
+  display: none;
 }
