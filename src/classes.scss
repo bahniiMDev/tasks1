@@ -33,6 +33,9 @@
 }
 
 //height
+.height_4 {
+  @include ad-value("height", 46, 40, 0, 1600, 1);
+}
 .height_1 {
   @include ad-value("height", 44, 36, 0, 1600, 1);
 }

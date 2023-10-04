@@ -8,6 +8,7 @@ import { setRegim } from "../../../../store/slices/tolBarSlice";
 const RegimState = () => {
   const disp = useDispatch();
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
+  const { filters } = useSelector((state) => state.taskInfo);
 
   const buttonStateFunction = () => {
     if (regim !== 2 && regim !== 4)
@@ -24,13 +25,32 @@ const RegimState = () => {
     <div className={`${clas.regim} height_1`}>
       <div
         className={`${
-          regim === 4
+          regim === 4 && filters.text === "No list"
             ? `${clas.selectList} ${clas.selectListActive}`
             : clas.selectList
         } mg_r_1 border-mini1`}
         onClick={() => disp(setRegim(4))}>
-        <Rect bd={1.5} qus={regim === 4} />
-        <p className={` size_1 ${clas.text}`}>No List</p>
+        {filters.img.length === 7 ? (
+          <Rect
+            bd={1.5}
+            color={filters.img}
+            qus={regim === 4 && filters.text === "No list"}
+          />
+        ) : (
+          <span className={clas.contImg}>
+            <img src={filters.img} className={clas.img} />
+          </span>
+        )}
+
+        <p
+          className={` size_1 ${
+            filters.text !== "No list"
+              ? `${clas.text} ${clas.textBlack}`
+              : clas.text
+          }`}>
+          {filters.text}
+          {filters.index}
+        </p>
         <button className={clas.contIcon}>
           <svg
             width="13"

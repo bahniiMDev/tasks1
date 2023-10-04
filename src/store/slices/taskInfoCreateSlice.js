@@ -5,6 +5,12 @@ const initialState = {
 	timeComplitionEnd: "",
 	date: "",
 	text: "",
+	filters: {
+		img: "#000000",
+		text: "No list",
+		count: null,
+		index: null
+	},
 	items: [],
 };
 
@@ -31,6 +37,9 @@ export const taskInfoCreateSlice = createSlice({
 		setDate: (state, action) => {
 			state.date = action.payload;
 		},
+		setFilters: (state, action) => {
+			state.filters = action.payload;
+		},
 	},
 });
 
@@ -39,7 +48,7 @@ export const {
 	setItem,
 	setTimeComplitionFrom,
 	setTimeComplitionEnd,
-	setDate
+	setDate,setFilters
 } = taskInfoCreateSlice.actions;
 
 export default taskInfoCreateSlice.reducer;
