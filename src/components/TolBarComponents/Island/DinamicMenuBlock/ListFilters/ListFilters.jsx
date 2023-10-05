@@ -43,11 +43,17 @@ const ListFilters = React.forwardRef((_, ref) => {
       count: 0,
     },
   ];
-
   const setArray = (item, i) => {
     disp(setFilters({ ...item, index: i }));
-    console.log(item);
   };
+
+  const ghostPosition = () => {
+    if (ghost >= filters.index + 1 && filters.index !== null) {
+      return (ghost - 1) * refD.current?.offsetHeight;
+    }
+    return ghost * refD.current?.offsetHeight;
+  };
+
   return (
     <div
       ref={ref}
@@ -57,20 +63,14 @@ const ListFilters = React.forwardRef((_, ref) => {
           : clas.container
       }>
       <span
+        ref={refD}
         style={{
-          top: `${
-            ghost >= filters.index + 1 && filters.index !== null
-              ? filters.index === array.length - 1
-                ? ghost * refD.current?.offsetHeight
-                : (ghost - 1) * refD.current?.offsetHeight
-              : ghost * refD.current?.offsetHeight
-          }px`,
+          top: `${ghostPosition()}px`,
         }}
         className={`${clas.ghost} height_4 border-mini1 gray1-bg`}></span>
       {array.map((item, i) => (
         <div
           key={i}
-          ref={refD}
           onMouseMove={() => setGhost(i)}
           onClick={() => setArray(item, i)}
           style={{
