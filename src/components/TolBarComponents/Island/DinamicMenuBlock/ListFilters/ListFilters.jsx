@@ -45,13 +45,14 @@ const ListFilters = React.forwardRef(({ setHeight }, ref) => {
   ];
   const setArray = (item, i) => {
     disp(setFilters({ ...item, index: i }));
-    setHeight(--array.length * refD.current?.offsetHeight);
+    setHeight((array.length - 1) * refD.current?.offsetHeight);
   };
 
   const ghostPosition = () => {
     if (ghost >= filters.index + 1 && filters.index !== null) {
       return (ghost - 1) * refD.current?.offsetHeight;
     }
+
     return ghost * refD.current?.offsetHeight;
   };
 
@@ -72,7 +73,9 @@ const ListFilters = React.forwardRef(({ setHeight }, ref) => {
       {array.map((item, i) => (
         <div
           key={i}
-          onMouseMove={() => setGhost(i)}
+          onMouseMove={() => {
+            setGhost(i);
+          }}
           onClick={() => setArray(item, i)}
           style={{
             transitionDelay:
