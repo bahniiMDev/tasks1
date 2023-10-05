@@ -21,7 +21,6 @@
   pointer-events: all;
 }
 .item {
-  cursor: default;
   @media (hover: hover) and (pointer: fine) {
     cursor: pointer;
   }
