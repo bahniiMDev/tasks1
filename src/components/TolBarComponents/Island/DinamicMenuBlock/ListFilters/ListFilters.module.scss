@@ -89,11 +89,10 @@
 }
 
 .ghost {
-  visibility: hidden;
-
+  opacity: 0;
   @media (hover: hover) and (pointer: fine) {
     display: block;
-    visibility: visible;
+    opacity: 1;
     width: 100%;
     position: absolute;
     top: 0;
