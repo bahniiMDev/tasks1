@@ -50,7 +50,7 @@
 //font-size
 .size_1 {
   font-weight: 500;
-  @include ad-value("font-size", 13.4, 11.1, 0, 1600, 1);
+  @include ad-value("font-size", 13.4, 11, 0, 1600, 1);
 }
 .size_2 {
   font-weight: 500;

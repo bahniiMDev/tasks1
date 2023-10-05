@@ -3,8 +3,9 @@ import clas from "./ListFilters.module.scss";
 import { setFilters } from "../../../../../store/slices/taskInfoCreateSlice";
 import Rect from "../../../Rect/Rect";
 import { useDispatch, useSelector } from "react-redux";
+import { setHeight } from "../../../../../store/slices/tolBarSlice";
 
-const ListFilters = React.forwardRef(({ setHeight }, ref) => {
+const ListFilters = React.forwardRef((_, ref) => {
   const disp = useDispatch();
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
   const { filters } = useSelector((state) => state.taskInfo);
@@ -42,10 +43,21 @@ const ListFilters = React.forwardRef(({ setHeight }, ref) => {
       text: "Learning",
       count: 0,
     },
+    {
+      img: "#000000",
+      text: "No list",
+      count: 0,
+    },
   ];
+
+  React.useEffect(() => {
+    disp(setHeight((array.length - 1) * refD.current?.offsetHeight));
+    console.log("bfhsfgsgej");
+  }, [regim]);
+
   const setArray = (item, i) => {
     disp(setFilters({ ...item, index: i }));
-    setHeight((array.length - 1) * refD.current?.offsetHeight);
+    disp(setHeight((array.length - 1) * refD.current?.offsetHeight));
   };
 
   const ghostPosition = () => {
@@ -54,6 +66,19 @@ const ListFilters = React.forwardRef(({ setHeight }, ref) => {
     }
 
     return ghost * refD.current?.offsetHeight;
+  };
+  const ItemClass = (item) => {
+    if (regim === 4) {
+      if (item.text === filters.text) {
+        return `${clas.item} ${clas.itemActive} ${clas.itemClick}`;
+      }
+      if (item.text === "No List") {
+        return `${clas.item} ${clas.itemActive}`;
+      }
+      return `${clas.item} ${clas.itemActive}`;
+    }
+
+    return clas.item;
   };
 
   return (
@@ -85,13 +110,9 @@ const ListFilters = React.forwardRef(({ setHeight }, ref) => {
                   : `${i * 0.1 + 0.1}s`
                 : `${i * 0.05}s`,
           }}
-          className={`${
-            regim === 4
-              ? item.img === filters.img
-                ? `${clas.item} ${clas.itemActive} ${clas.itemClick}`
-                : `${clas.item} ${clas.itemActive}`
-              : clas.item
-          } height_4 border-mini1 black1-co size_1`}>
+          className={`${ItemClass(
+            item
+          )} height_4 border-mini1 black1-co size_1`}>
           {item.img.length === 7 ? (
             <Rect color={item.img} bd={1.5} />
           ) : (

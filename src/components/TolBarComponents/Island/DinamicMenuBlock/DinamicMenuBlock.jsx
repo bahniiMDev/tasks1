@@ -15,14 +15,13 @@ const DinamicMenuBlock = () => {
     (state) => state.taskInfo
   );
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
+  const height = useSelector((state) => state.tolBar.height);
   const arr1 = [...Array(24)].map((_, i) => i);
   const arrayInActiveTime = [1, 23, 18];
   const ref = React.useRef(null);
   const date = useSelector((state) => state.taskInfo.date);
   const dataRef = React.useRef(null);
   const filterRef = React.useRef(null);
-  const [height, setHeight] = React.useState(null);
-  console.log(height);
   //
 
   //
@@ -151,7 +150,7 @@ const DinamicMenuBlock = () => {
           </span>
         ))}
       </div>
-      <ListFilters ref={filterRef} setHeight={setHeight} />
+      <ListFilters ref={filterRef} />
       <DataBlock ref={dataRef} />
     </div>
   );

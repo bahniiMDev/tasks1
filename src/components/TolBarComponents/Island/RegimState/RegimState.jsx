@@ -3,11 +3,12 @@ import clas from "./RegimState.module.scss";
 import arrow from "../../../../assets/arrow-right.svg";
 import Rect from "../../Rect/Rect";
 import { useDispatch, useSelector } from "react-redux";
-import { setRegim } from "../../../../store/slices/tolBarSlice";
+import { setHeight, setRegim } from "../../../../store/slices/tolBarSlice";
 
 const RegimState = () => {
   const disp = useDispatch();
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
+  const hRef = React.useRef(null);
   const { filters } = useSelector((state) => state.taskInfo);
 
   const buttonStateFunction = () => {
@@ -22,14 +23,16 @@ const RegimState = () => {
   };
 
   return (
-    <div className={`${clas.regim} height_1`}>
+    <div className={`${clas.regim} height_1`} ref={hRef}>
       <div
         className={`${
           regim === 4 && filters.text === "No list"
             ? `${clas.selectList} ${clas.selectListActive}`
             : clas.selectList
         } mg_r_1 border-mini1`}
-        onClick={() => disp(setRegim(4))}>
+        onClick={() => {
+          disp(setRegim(4));
+        }}>
         {filters.img.length === 7 ? (
           <Rect
             bd={1.5}

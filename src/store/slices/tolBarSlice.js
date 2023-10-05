@@ -5,6 +5,7 @@ const initialState = {
 	border: false,
 	animClick: false,
 	regimIslandMenu: 3,
+	height: null,
 };
 
 export const tolBarSlice = createSlice({
@@ -23,10 +24,13 @@ export const tolBarSlice = createSlice({
 		setRegim: (state, action) => {
 			state.regimIslandMenu = action.payload;
 		},
+				setHeight: (state, action) => {
+			state.height = action.payload;
+		},
 	},
 });
 
-export const { clickResize, setRegim, clickBorder, animationStane } =
+export const { clickResize, setRegim,setHeight, clickBorder, animationStane } =
 	tolBarSlice.actions;
 
 export default tolBarSlice.reducer;

@@ -89,6 +89,7 @@
 }
 
 .ghost {
+  opacity: 1;
   display: block;
   width: 100%;
   position: absolute;
@@ -97,11 +98,6 @@
   z-index: 2;
   @media (hover: hover) and (pointer: fine) {
     opacity: 1;
-    display: block;
-    width: 100%;
-    position: absolute;
-    top: 0;
     transition: 0.3s ease-out;
-    z-index: 2;
   }
 }
