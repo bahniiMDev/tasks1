@@ -21,7 +21,7 @@
   pointer-events: all;
 }
 .item {
-  cursor: pointer;
+  cursor: default;
 
   @media (hover: hover) and (pointer: fine) {
     cursor: pointer;
@@ -89,13 +89,15 @@
 }
 
 .ghost {
+  visibility: hidden;
+
   @media (hover: hover) and (pointer: fine) {
     display: block;
+    visibility: visible;
     width: 100%;
     position: absolute;
     top: 0;
     transition: 0.3s ease-out;
     z-index: 2;
   }
-  display: none;
 }
