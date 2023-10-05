@@ -49,7 +49,6 @@ const RegimState = () => {
               : clas.text
           }`}>
           {filters.text}
-          {filters.index}
         </p>
         <button className={clas.contIcon}>
           <svg

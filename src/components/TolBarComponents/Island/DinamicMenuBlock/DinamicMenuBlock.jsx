@@ -7,6 +7,7 @@ import {
 } from "../../../../store/slices/taskInfoCreateSlice";
 import DataBlock from "./DataBlock/DataBlock";
 import ListFilters from "./ListFilters/ListFilters";
+import { setRegim } from "../../../../store/slices/tolBarSlice";
 
 const DinamicMenuBlock = () => {
   const disp = useDispatch();
@@ -20,7 +21,8 @@ const DinamicMenuBlock = () => {
   const date = useSelector((state) => state.taskInfo.date);
   const dataRef = React.useRef(null);
   const filterRef = React.useRef(null);
-
+  const [height, setHeight] = React.useState(null);
+  console.log(height);
   //
 
   //
@@ -66,6 +68,7 @@ const DinamicMenuBlock = () => {
       timeComplitionEnd !== index &&
       timeComplitionEnd === ""
     ) {
+      setTimeout(() => disp(setRegim(4)), 300);
       return disp(setTimeComplitionEnd(index));
     }
     if (
@@ -103,7 +106,7 @@ const DinamicMenuBlock = () => {
       return `${dataRef.current?.offsetHeight}px`;
     }
     if (regim === 4) {
-      return `${filterRef.current?.offsetHeight}px`;
+      return `${height ? height : filterRef.current?.offsetHeight}px`;
     }
   };
   //
@@ -148,7 +151,7 @@ const DinamicMenuBlock = () => {
           </span>
         ))}
       </div>
-      <ListFilters ref={filterRef} />
+      <ListFilters ref={filterRef} setHeight={setHeight} />
       <DataBlock ref={dataRef} />
     </div>
   );

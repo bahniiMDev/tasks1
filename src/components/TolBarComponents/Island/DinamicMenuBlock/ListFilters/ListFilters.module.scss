@@ -21,6 +21,7 @@
   pointer-events: all;
 }
 .item {
+  cursor: default;
   @media (hover: hover) and (pointer: fine) {
     cursor: pointer;
   }
@@ -87,10 +88,13 @@
 }
 
 .ghost {
-  display: block;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  transition: 0.3s ease-out;
-  z-index: 2;
+  @media (hover: hover) and (pointer: fine) {
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: 0.3s ease-out;
+    z-index: 2;
+  }
+  display: none;
 }

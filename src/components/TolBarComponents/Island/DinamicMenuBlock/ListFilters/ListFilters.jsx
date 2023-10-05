@@ -4,7 +4,7 @@ import { setFilters } from "../../../../../store/slices/taskInfoCreateSlice";
 import Rect from "../../../Rect/Rect";
 import { useDispatch, useSelector } from "react-redux";
 
-const ListFilters = React.forwardRef((_, ref) => {
+const ListFilters = React.forwardRef(({ setHeight }, ref) => {
   const disp = useDispatch();
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
   const { filters } = useSelector((state) => state.taskInfo);
@@ -45,6 +45,7 @@ const ListFilters = React.forwardRef((_, ref) => {
   ];
   const setArray = (item, i) => {
     disp(setFilters({ ...item, index: i }));
+    setHeight(--array.length * refD.current?.offsetHeight);
   };
 
   const ghostPosition = () => {

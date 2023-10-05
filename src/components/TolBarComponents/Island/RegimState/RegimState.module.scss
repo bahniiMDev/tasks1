@@ -23,11 +23,6 @@
     opacity: 0;
     transition: ease-in-out 0.2s;
   }
-  .contIcon {
-    svg {
-      rotate: -90deg;
-    }
-  }
 }
 .text {
   width: 100%;
@@ -93,5 +88,12 @@
     rotate: 90deg;
     height: 34%;
     pointer-events: none;
+  }
+}
+.selectListActive {
+  .contIcon {
+    svg {
+      rotate: -90deg;
+    }
   }
 }
