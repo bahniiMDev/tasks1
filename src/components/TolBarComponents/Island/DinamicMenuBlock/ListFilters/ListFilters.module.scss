@@ -89,10 +89,14 @@
 }
 
 .ghost {
-  opacity: 0;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
   @media (hover: hover) and (pointer: fine) {
-    display: block;
     opacity: 1;
+    display: block;
     width: 100%;
     position: absolute;
     top: 0;
