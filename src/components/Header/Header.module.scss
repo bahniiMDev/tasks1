@@ -3,18 +3,18 @@
 
 .header {
   display: flex;
-  @include ad-value("height", 46, 41, 0, 1600, 1);
+  @include ad-value("height", 44, 40, 0, 1600, 1);
   width: 100%;
-  @include ad-value("margin-bottom", 16, 12, 0, 1600, 1);
+  @include ad-value("margin-bottom", 14, 10, 0, 1600, 1);
   align-items: center;
 }
 
 .title {
-  @include ad-value("font-size", 26, 23, 0, 1600, 1);
+  @include ad-value("font-size", 25, 21, 0, 1600, 1);
   font-weight: 600;
   letter-spacing: -0.2px;
   color: #000;
-  @include ad-value("margin-right", 8, 6, 0, 1600, 1);
+  @include ad-value("margin-right", 7, 5, 0, 1600, 1);
 }
 .emodj {
   @include ad-value("font-size", 18, 16, 0, 1600, 1);
@@ -31,10 +31,10 @@ img {
 
 .today {
   background: #fff;
-  width: 150px;
+  width: 200px;
   display: flex;
   font-weight: 500;
-  @include ad-value("font-size", 14.5, 13, 0, 1600, 1);
+  @include ad-value("font-size", 13.5, 12.5, 0, 1600, 1);
   pointer-events: none;
   align-items: center;
   justify-content: flex-start;
@@ -64,7 +64,7 @@ img {
   height: 100%;
   aspect-ratio: 1;
   position: relative;
-  @include ad-value("margin-left", 8, 6, 0, 1600, 1);
+  @include ad-value("margin-left", 7, 5, 0, 1600, 1);
   display: flex;
   justify-content: center;
   align-items: center;
