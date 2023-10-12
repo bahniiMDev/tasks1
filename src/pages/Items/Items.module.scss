@@ -2,12 +2,14 @@
 @use "../../scss/vars" as *;
 
 .container {
-	width: 100%;
-	max-width: 600px;
+  width: 100%;
 }
 .task {
-	background: #fff;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+  background: #fff;
+  color: #000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: 500;
+  @include ad-value("font-size", 13.5, 11.5, 0, 1600, 1);
 }

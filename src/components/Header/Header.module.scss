@@ -1,19 +1,81 @@
 @use "../../scss/utils" as *;
 @use "../../scss/vars" as *;
 
-.title {
-	@include ad-value("font-size", 22, 17, 0, 1600, 1);
-	font-weight: 600;
-	color: #000;
+.header {
+  display: flex;
+  width: 100%;
+  @include ad-value("margin-bottom", 24, 20, 0, 1600, 1);
+  align-items: center;
 }
 
-.titleCont {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	letter-spacing: -0.5px;
-	word-spacing: 2px;
+.title {
+  @include ad-value("font-size", 24, 20, 0, 1600, 1);
+  font-weight: 600;
+  color: #000;
+  @include ad-value("margin-right", 6, 4, 0, 1600, 1);
+}
+.emodj {
+  @include ad-value("font-size", 18, 15, 0, 1600, 1);
+  flex: 1 auto;
 }
 img {
-	@include ad-value("height", 28, 24, 0, 1600, 1);
+  @include ad-value("height", 28, 24, 0, 1600, 1);
+}
+
+.buttonCont {
+  display: flex;
+  height: 100%;
+}
+
+.today {
+  background: #fff;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.list {
+  height: 100%;
+  display: block;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    height: 75%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      height: 40%;
+      rotate: 90deg;
+      aspect-ratio: 1;
+    }
+  }
+}
+.button {
+  background: #fff;
+  height: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40%;
+    height: 1.75px;
+    border-radius: 10px;
+    background: #000;
+  }
+  &::after {
+    transform: translateY(3px);
+  }
+  &::before {
+    transform: translateY(-3px);
+  }
 }

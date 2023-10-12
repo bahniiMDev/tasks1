@@ -36,6 +36,7 @@ const RegimState = () => {
         {filters.img.length === 7 ? (
           <Rect
             bd={1.5}
+            regim="medium"
             color={filters.img}
             qus={regim === 4 && filters.text === "No list"}
           />

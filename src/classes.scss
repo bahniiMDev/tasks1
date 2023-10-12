@@ -50,7 +50,7 @@
 //font-size
 .size_1 {
   font-weight: 500;
-  @include ad-value("font-size", 13.4, 11, 0, 1600, 1);
+  @include ad-value("font-size", 13.4, 11.4, 0, 1600, 1);
 }
 .size_2 {
   font-weight: 500;
@@ -72,6 +72,9 @@
 }
 .mg_r_1 {
   @include ad-value("margin-right", 6, 4, 0, 1600, 1);
+}
+.mg_l_1 {
+  @include ad-value("margin-left", 6, 4, 0, 1600, 1);
 }
 .mg_bt_1 {
   @include ad-value("margin-bottom", 12, 8, 0, 1600, 1);

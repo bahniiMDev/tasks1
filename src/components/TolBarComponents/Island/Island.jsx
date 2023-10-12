@@ -12,11 +12,12 @@ import {
   clickResize,
   setRegim,
 } from "../../../store/slices/tolBarSlice";
-import { setItem } from "../../../store/slices/taskInfoCreateSlice";
+import axios from "axios";
+import { pushItems } from "../../../store/slices/taskInfoCreateSlice";
 
 const Island = () => {
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
-
+  const obj = useSelector((state) => state.taskInfo);
   const { animClick, resize, border } = useSelector((state) => state.tolBar);
   const refFake = React.useRef(null);
 
@@ -42,9 +43,20 @@ const Island = () => {
     return clas.dinamicIslandCont;
   };
 
-  const clickCreate = () => {
-    disp(setItem());
+  const clickCreate = async () => {
     disp(animationStane(false));
+    console.log(obj);
+
+    axios.post("https://651ee37744a3a8aa4769288f.mockapi.io/items", {
+      text: obj.text,
+      img: obj.filters.img,
+    });
+    disp(
+      pushItems({
+        text: obj.text,
+        img: obj.filters.img,
+      })
+    );
   };
 
   return (
