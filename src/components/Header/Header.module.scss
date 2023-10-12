@@ -9,9 +9,9 @@
 }
 
 .title {
-  @include ad-value("font-size", 24, 22, 0, 1600, 1);
+  @include ad-value("font-size", 26, 22, 0, 1600, 1);
   font-weight: 600;
-  letter-spacing: -0.1px;
+  letter-spacing: -0.2px;
   color: #000;
   @include ad-value("margin-right", 6, 4, 0, 1600, 1);
 }
@@ -33,7 +33,7 @@ img {
   width: 150px;
   display: flex;
   font-weight: 500;
-  @include ad-value("font-size", 14, 12, 0, 1600, 1);
+  @include ad-value("font-size", 14, 12.5, 0, 1600, 1);
   align-items: center;
   justify-content: flex-start;
 }
