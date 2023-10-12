@@ -3,7 +3,7 @@ import clas from "./Header.module.scss";
 
 const Header = () => {
   return (
-    <div className={`${clas.header} height_1`}>
+    <div className={`${clas.header}`}>
       <p className={`${clas.title}`}>Tasks</p>
       <span className={clas.emodj}>👋</span>
       <div className={clas.buttonCont}>

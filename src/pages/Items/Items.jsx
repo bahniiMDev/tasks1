@@ -18,7 +18,7 @@ const Items = () => {
   return (
     <ul className={clas.container}>
       {items.map((item, i) => (
-        <li className={`${clas.task} height_1 border-mini1 mg_b_1`} key={i}>
+        <li className={`${clas.task} border-mini1 mg_b_1`} key={i}>
           <Rect color="lightgray" bd={1.5} regim="big" />
           {item.text}
         </li>

@@ -3,17 +3,18 @@
 
 .header {
   display: flex;
+  @include ad-value("height", 48, 41, 0, 1600, 1);
   width: 100%;
   @include ad-value("margin-bottom", 24, 20, 0, 1600, 1);
   align-items: center;
 }
 
 .title {
-  @include ad-value("font-size", 26, 22, 0, 1600, 1);
+  @include ad-value("font-size", 26, 23, 0, 1600, 1);
   font-weight: 600;
   letter-spacing: -0.2px;
   color: #000;
-  @include ad-value("margin-right", 6, 4, 0, 1600, 1);
+  @include ad-value("margin-right", 8, 6, 0, 1600, 1);
 }
 .emodj {
   @include ad-value("font-size", 18, 16, 0, 1600, 1);
@@ -33,7 +34,8 @@ img {
   width: 150px;
   display: flex;
   font-weight: 500;
-  @include ad-value("font-size", 14, 12.5, 0, 1600, 1);
+  @include ad-value("font-size", 14.5, 13, 0, 1600, 1);
+  pointer-events: none;
   align-items: center;
   justify-content: flex-start;
 }
