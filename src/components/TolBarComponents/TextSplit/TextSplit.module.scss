@@ -2,31 +2,31 @@
 @use "../../../scss/vars" as *;
 
 .text {
-	@include ad-value("font-size", 13.1, 12, 0, 1600, 1);
-	flex: 1 auto;
-	display: flex;
-	align-items: center;
-	-moz-user-select: none;
-	pointer-events: none;
-	-khtml-user-select: none;
-	user-select: none;
-	cursor: default;
-	@media (any-hover: hover) {
-		cursor: pointer;
-	}
+  @include ad-value("font-size", 14, 12.5, 0, 1600, 1);
+  flex: 1 auto;
+  display: flex;
+  align-items: center;
+  -moz-user-select: none;
+  pointer-events: none;
+  -khtml-user-select: none;
+  user-select: none;
+  cursor: default;
+  @media (any-hover: hover) {
+    cursor: pointer;
+  }
 }
 .letter {
-	display: block;
-	transform: translateY(-150%);
-	opacity: 0;
-	animation: text-preload 0.7s forwards;
-	animation-timing-function: $ease-info-button;
-	will-change: auto;
+  display: block;
+  transform: translateY(-150%);
+  opacity: 0;
+  animation: text-preload 0.7s forwards;
+  animation-timing-function: $ease-info-button;
+  will-change: auto;
 }
 
 @keyframes text-preload {
-	100% {
-		transform: translateY(0);
-		opacity: 1;
-	}
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

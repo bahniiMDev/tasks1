@@ -3,9 +3,9 @@
 
 .header {
   display: flex;
-  @include ad-value("height", 48, 41, 0, 1600, 1);
+  @include ad-value("height", 46, 41, 0, 1600, 1);
   width: 100%;
-  @include ad-value("margin-bottom", 24, 20, 0, 1600, 1);
+  @include ad-value("margin-bottom", 16, 12, 0, 1600, 1);
   align-items: center;
 }
 
@@ -64,6 +64,7 @@ img {
   height: 100%;
   aspect-ratio: 1;
   position: relative;
+  @include ad-value("margin-left", 8, 6, 0, 1600, 1);
   display: flex;
   justify-content: center;
   align-items: center;

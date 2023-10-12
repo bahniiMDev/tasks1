@@ -7,7 +7,7 @@ const Header = () => {
       <p className={`${clas.title}`}>Tasks</p>
       <span className={clas.emodj}>👋</span>
       <div className={clas.buttonCont}>
-        <div className={`${clas.today} border-mini1 mg_r_1 black1-co`}>
+        <div className={`${clas.today} border-mini1  black1-co`}>
           <span className={clas.list}>
             <button className="gray1-bg border-mini1">
               <svg

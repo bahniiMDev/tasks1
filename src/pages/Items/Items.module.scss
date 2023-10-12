@@ -5,7 +5,7 @@
   width: 100%;
 }
 .task {
-  @include ad-value("height", 48, 41, 0, 1600, 1);
+  @include ad-value("height", 46, 41, 0, 1600, 1);
   background: #fff;
   color: #000;
   display: flex;
@@ -13,4 +13,5 @@
   align-items: center;
   font-weight: 500;
   @include ad-value("font-size", 14.5, 13, 0, 1600, 1);
+  @include ad-value("margin-bottom", 8, 6, 0, 1600, 1);
 }
