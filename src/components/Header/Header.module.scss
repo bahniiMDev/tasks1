@@ -9,14 +9,15 @@
 }
 
 .title {
-  @include ad-value("font-size", 24, 20, 0, 1600, 1);
+  @include ad-value("font-size", 24, 22, 0, 1600, 1);
   font-weight: 600;
+  letter-spacing: -0.1px;
   color: #000;
   @include ad-value("margin-right", 6, 4, 0, 1600, 1);
 }
 .emodj {
-  @include ad-value("font-size", 18, 15, 0, 1600, 1);
-  flex: 1 auto;
+  @include ad-value("font-size", 18, 16, 0, 1600, 1);
+  flex: 1 1 auto;
 }
 img {
   @include ad-value("height", 28, 24, 0, 1600, 1);
@@ -29,8 +30,10 @@ img {
 
 .today {
   background: #fff;
-  width: 120px;
+  width: 150px;
   display: flex;
+  font-weight: 500;
+  @include ad-value("font-size", 14, 12, 0, 1600, 1);
   align-items: center;
   justify-content: flex-start;
 }
@@ -42,13 +45,13 @@ img {
   justify-content: center;
   align-items: center;
   button {
-    height: 75%;
+    height: 70%;
     aspect-ratio: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     svg {
-      height: 40%;
+      height: 45%;
       rotate: 90deg;
       aspect-ratio: 1;
     }
@@ -67,15 +70,16 @@ img {
     content: "";
     position: absolute;
     display: block;
-    width: 40%;
-    height: 1.75px;
+    width: 35%;
+    @include ad-value("height", 1.75, 1.5, 0, 1600, 1);
+
     border-radius: 10px;
     background: #000;
   }
   &::after {
-    transform: translateY(3px);
+    transform: translateY(2.5px);
   }
   &::before {
-    transform: translateY(-3px);
+    transform: translateY(-2.5px);
   }
 }
