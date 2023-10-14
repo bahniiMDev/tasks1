@@ -13,7 +13,7 @@
   @include ad-value("font-size", 26, 21, 0, 1600, 1);
   font-weight: 600;
   letter-spacing: -0.2px;
-  transform: translateX(-50%) scale(0);
+  transform: scale(0);
   color: #000;
   opacity: 0;
   @include ad-value("margin-right", 7, 5, 0, 1600, 1);
@@ -23,7 +23,7 @@
 @keyframes title {
   100% {
     opacity: 1;
-    transform: translateX(0) scale(1);
+    transform: scale(1);
   }
 }
 
@@ -50,7 +50,7 @@ img {
   animation: button 0.6s $ease-info-button 0.8s forwards;
   opacity: 0;
   scale: 0.5;
-  transform-origin: left center;
+  transform-origin: center center;
   align-items: center;
   justify-content: flex-start;
 }
@@ -82,7 +82,8 @@ img {
   position: relative;
   @include ad-value("margin-left", 7, 5, 0, 1600, 1);
   display: flex;
-  transform-origin: left center;
+  transform-origin: center center;
+
   justify-content: center;
   align-items: center;
   scale: 0.5;
