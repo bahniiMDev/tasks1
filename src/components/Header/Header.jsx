@@ -1,10 +1,11 @@
 import React from "react";
 import clas from "./Header.module.scss";
+import TextSplit from "../TolBarComponents/TextSplit/TextSplit";
 
 const Header = () => {
   return (
     <div className={`${clas.header}`}>
-      <p className={`${clas.title}`}>Tasks</p>
+      <TextSplit textValue="Tasks" anyClass={clas.title} />
       <span className={clas.emodj}></span>
       <div className={clas.buttonCont}>
         <div className={`${clas.today} border-mini1  black1-co`}>

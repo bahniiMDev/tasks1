@@ -3,23 +3,17 @@
 
 .text {
   @include ad-value("font-size", 14, 12.5, 0, 1600, 1);
-  flex: 1 auto;
   display: flex;
   align-items: center;
   -moz-user-select: none;
   pointer-events: none;
   -khtml-user-select: none;
   user-select: none;
-  cursor: default;
-  @media (any-hover: hover) {
-    cursor: pointer;
-  }
 }
 .letter {
-  display: block;
-  transform: translateY(-150%);
+  transform: translateY(-100%);
   opacity: 0;
-  animation: text-preload 0.7s forwards;
+  animation: text-preload 0.8s forwards;
   animation-timing-function: $ease-info-button;
   will-change: auto;
 }

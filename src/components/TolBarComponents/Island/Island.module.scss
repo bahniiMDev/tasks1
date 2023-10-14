@@ -13,8 +13,8 @@
   align-items: center;
   transition: 0.5s $ease-content;
   justify-content: center;
-  animation: tolBarPreload 0.6s $ease-content forwards;
-  transform: translateY(100%);
+  animation: tolBarPreload 0.8s $ease-info-button forwards;
+  transform: translateY(70%);
   opacity: 0;
   will-change: auto;
 }

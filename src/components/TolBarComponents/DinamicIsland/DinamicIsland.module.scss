@@ -61,7 +61,20 @@
   transition: 1s $ease-info-mini;
   margin-right: 2px;
 }
-
+.text {
+  @include ad-value("font-size", 14, 12.5, 0, 1600, 1);
+  flex: 1 auto;
+  display: flex;
+  align-items: center;
+  -moz-user-select: none;
+  pointer-events: none;
+  -khtml-user-select: none;
+  user-select: none;
+  cursor: default;
+  @media (any-hover: hover) {
+    cursor: pointer;
+  }
+}
 .svg {
   position: absolute;
   width: 78%;

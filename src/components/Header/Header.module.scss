@@ -12,12 +12,11 @@
 .title {
   @include ad-value("font-size", 26, 21, 0, 1600, 1);
   font-weight: 600;
-  letter-spacing: -0.2px;
+  letter-spacing: -6px;
   transform: scale(0);
   color: #000;
   opacity: 0;
   @include ad-value("margin-right", 7, 5, 0, 1600, 1);
-  animation: title 0.6s $ease-content 0.6s forwards;
   transform-origin: center center;
 }
 @keyframes title {
@@ -47,7 +46,7 @@ img {
   font-weight: 500;
   @include ad-value("font-size", 13.5, 12.5, 0, 1600, 1);
   pointer-events: none;
-  animation: button 0.6s $ease-info-button 0.8s forwards;
+  animation: button 0.6s $ease-info-button 0.6s forwards;
   opacity: 0;
   scale: 0.5;
   transform-origin: center center;
@@ -87,7 +86,7 @@ img {
   justify-content: center;
   align-items: center;
   scale: 0.5;
-  animation: button 0.6s $ease-info-button 1s forwards;
+  animation: button 0.6s $ease-info-button 0.7s forwards;
   &::before,
   &::after {
     content: "";

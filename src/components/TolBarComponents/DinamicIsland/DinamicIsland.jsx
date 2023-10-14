@@ -61,7 +61,8 @@ const DinamicIsland = ({ textValue }) => {
           />
         </svg>
       </button>
-      <TextSplit textValue={textValue} />
+
+      <p className={clas.text}>{textValue}</p>
       <ButtonStylezed />
     </nav>
   );
