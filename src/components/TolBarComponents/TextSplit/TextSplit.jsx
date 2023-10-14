@@ -12,7 +12,7 @@ const TextSplit = ({ textValue = "Text", anyClass = "" }) => {
           key={index}
           className={`${clas.letter} ${anyClass}`}
           style={{
-            animationDelay: `${(index - 1) * numberDelayLetter + 0.5}s`,
+            animationDelay: `${(index - 1) * numberDelayLetter + 0}s`,
           }}>
           {item === " " ? <>&nbsp;</> : item}
         </span>
