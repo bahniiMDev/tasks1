@@ -10,9 +10,10 @@
 }
 
 .title {
-  @include ad-value("font-size", 26, 21, 0, 1600, 1);
+  @include ad-value("font-size", 26, 22, 0, 1600, 1);
   font-weight: 600;
-  letter-spacing: -7px;
+  @include ad-value("letter-spacing", -7, -4.5, 0, 1600, 1);
+
   transform: scale(0);
   color: #000;
   opacity: 0;
