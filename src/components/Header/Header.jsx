@@ -13,8 +13,8 @@ const Header = () => {
     return clas.menu;
   };
   const activeListClass = () => {
-    if (listClick) return `${clas.list2} ${clas.list2Active}`;
-    return clas.list2;
+    if (listClick) return `${clas.menu} ${clas.menuActive}`;
+    return clas.menu;
   };
   return (
     <div className={`${clas.header}`}>
@@ -23,13 +23,25 @@ const Header = () => {
       <div className={clas.buttonCont}>
         <List />
         <Menu />
-        <ul className={`${activeMenuClass()} border-mini1 size_1`}>
+        <ul
+          style={{
+            right: "0",
+            background: "#fff",
+            color: "#000",
+          }}
+          className={`${activeMenuClass()} border-mini1 size_1`}>
           <p>
             Menu <br />
             Coming Soon
           </p>
         </ul>
-        <ul className={`${activeListClass()} border-mini1 size_1`}>
+        <ul
+          style={{
+            left: "0",
+            background: "#000",
+            color: "#fff",
+          }}
+          className={`${activeListClass()} border-mini1 size_1`}>
           <p>
             Filters <br />
             Coming Soon
