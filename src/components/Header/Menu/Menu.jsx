@@ -1,7 +1,7 @@
 import React from "react";
 import clas from "./Menu.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { setClickMenu } from "../../../store/slices/header";
+import { setClickList, setClickMenu } from "../../../store/slices/header";
 
 const Menu = () => {
   const disp = useDispatch();
@@ -15,7 +15,10 @@ const Menu = () => {
   return (
     <button
       className={`${clickClass()} border-mini1`}
-      onClick={() => disp(setClickMenu(!menuClick))}></button>
+      onClick={() => {
+        disp(setClickMenu(!menuClick));
+        disp(setClickList(false));
+      }}></button>
   );
 };
 

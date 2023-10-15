@@ -7,14 +7,17 @@
   display: flex;
   font-weight: 500;
   @include ad-value("font-size", 13.5, 12.5, 0, 1600, 1);
-  pointer-events: none;
-  animation: button 0.5s $ease-info-button 0.4s forwards;
+  animation: button 0.5s $ease-info-button 0.5s forwards;
   opacity: 0;
   scale: 0.5;
   transform-origin: center center;
   align-items: center;
   z-index: 2;
   justify-content: flex-start;
+  cursor: default;
+  @media (hover: hover) and (pointer: fine) {
+    cursor: pointer;
+  }
 }
 .list {
   height: 100%;
@@ -33,14 +36,34 @@
     svg {
       height: 45%;
       rotate: 90deg;
+      transition: rotate 0.7s $ease-content;
       aspect-ratio: 1;
     }
   }
 }
 
+.todayActive {
+  button {
+    svg {
+      animation: menuClick 0.4s $ease-content 0s forwards;
+      rotate: -90deg;
+    }
+  }
+}
 @keyframes button {
   100% {
     opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes menuClick {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.15;
+  }
+  100% {
     scale: 1;
   }
 }

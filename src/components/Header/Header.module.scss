@@ -13,7 +13,6 @@
   @include ad-value("font-size", 26, 22, 0, 1600, 1);
   font-weight: 600;
   @include ad-value("letter-spacing", -7, -4.5, 0, 1600, 1);
-
   transform: scale(0);
   color: #000;
   opacity: 0;
@@ -52,20 +51,79 @@ img {
   scale: 0.7;
   height: 100%;
   opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   transition: scale 0.6s cubic-bezier(0.5, -0.4, 0.4, 1) 0s,
     top 0.5s cubic-bezier(0.5, -0.4, 0.4, 1) 0.3s,
     width 0.5s cubic-bezier(0.5, -0.4, 0.4, 1) 0.1s,
     height 0.5s $ease-content 0.3s,
-    opacity 0.3s cubic-bezier(0.5, -0.4, 0.4, 1) 0.5s;
+    opacity 0.3s cubic-bezier(0.5, -0.4, 0.4, 1) 0.4s;
+
+  p {
+    color: #000;
+    opacity: 0;
+    transition: 0.4s ease 0s;
+  }
 }
 
 .menuActive {
   opacity: 1;
   transition: scale 0.6s $ease-content 0.3s, top 0.5s $ease-content,
     width 0.5s $ease-content 0.25s, height 0.5s $ease-content 0.1s,
-    opacity 0.3s $ease-content 0s;
+    opacity 0.3s $ease-content 0.1s;
   scale: 1;
   width: 100%;
   height: 400%;
   @include ad-value("top", 51, 45, 0, 1600, 1);
+
+  p {
+    transition: 0.4s ease 0.6s;
+    opacity: 1;
+  }
+}
+
+.list2 {
+  z-index: 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  overflow: hidden;
+  width: 20%;
+  background: #000;
+  scale: 0.7;
+  text-align: center;
+  height: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: scale 0.6s cubic-bezier(0.5, -0.4, 0.4, 1) 0s,
+    top 0.5s cubic-bezier(0.5, -0.4, 0.4, 1) 0.3s,
+    width 0.5s cubic-bezier(0.5, -0.4, 0.4, 1) 0.1s,
+    height 0.5s $ease-content 0.3s,
+    opacity 0.3s cubic-bezier(0.5, -0.4, 0.4, 1) 0.4s;
+
+  p {
+    color: #fff;
+    opacity: 0;
+    transition: 0.4s ease 0s;
+  }
+}
+
+.list2Active {
+  opacity: 1;
+  transition: scale 0.6s $ease-content 0.3s, top 0.5s $ease-content,
+    width 0.5s $ease-content 0.25s, height 0.5s $ease-content 0.1s,
+    opacity 0.3s $ease-content 0.1s;
+  scale: 1;
+  width: 100%;
+  height: 400%;
+  @include ad-value("top", 51, 45, 0, 1600, 1);
+
+  p {
+    transition: 0.4s ease 0.6s;
+    opacity: 1;
+  }
 }
