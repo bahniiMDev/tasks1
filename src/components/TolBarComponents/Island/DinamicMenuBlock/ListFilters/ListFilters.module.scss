@@ -39,9 +39,11 @@
     transform 0.6s $ease-content 0s;
   will-change: transform, opacity;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .itemActive {
+  pointer-events: all;
   opacity: 1;
   transform: translateY(0%);
 }

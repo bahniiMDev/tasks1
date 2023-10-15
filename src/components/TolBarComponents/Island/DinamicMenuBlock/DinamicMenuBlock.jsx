@@ -19,6 +19,7 @@ const DinamicMenuBlock = () => {
   const arr1 = [...Array(24)].map((_, i) => i);
   const arrayInActiveTime = [1, 23, 18];
   const ref = React.useRef(null);
+  const { animClick } = useSelector((state) => state.tolBar);
   const date = useSelector((state) => state.taskInfo.date);
   const dataRef = React.useRef(null);
   const filterRef = React.useRef(null);
@@ -124,15 +125,14 @@ const DinamicMenuBlock = () => {
       <textarea
         placeholder="Add notes"
         className={`${
-          regim === 2 ? `${clas.area} ${clas.areaAcive}` : clas.area
+          regim === 2
+            ? animClick
+              ? `${clas.area} ${clas.areaAcive}`
+              : `${clas.area} ${clas.areaAcive2}`
+            : clas.area
         } gray1-bg border-mini1 size_1`}
       />
-      <div
-        ref={ref}
-        className={`${dinamicTimeFunctionState()} gap_1`}
-        style={{
-          pointerEvents: regim === 1 ? "all" : "none",
-        }}>
+      <div ref={ref} className={`${dinamicTimeFunctionState()} gap_1`}>
         {arr1.reverse().map((_, index) => (
           <span
             onClick={() => timeTagOnClickFunction(index + 1)}
@@ -141,6 +141,7 @@ const DinamicMenuBlock = () => {
             )} height_2 blue2-bg blue1-co size_4`}
             key={index}
             style={{
+              pointerEvents: animClick ? "all" : "none",
               transition: `scale 0.5s ease ${`${
                 index * 0.02
               }s`}, opacity 0.5s ease ${`${index * 0.02}s`},

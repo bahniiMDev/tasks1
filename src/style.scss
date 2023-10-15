@@ -14,7 +14,7 @@ button,
 a {
   background: transparent;
   cursor: default;
-  @media (any-hover: hover) {
+  @media (hover: hover) and (pointer: fine) {
     cursor: pointer;
   }
 }

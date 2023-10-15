@@ -1,0 +1,78 @@
+@use "../../../scss/utils" as *;
+@use "../../../scss/vars" as *;
+
+@keyframes button {
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.button {
+  background: #fff;
+  height: 100%;
+  aspect-ratio: 1;
+  opacity: 0;
+  position: relative;
+  @include ad-value("margin-left", 7, 5, 0, 1600, 1);
+  display: flex;
+  transform-origin: center center;
+  justify-content: center;
+  align-items: center;
+  scale: 0.5;
+  animation: button 0.6s $ease-info-button 0.4s forwards;
+  z-index: 10;
+}
+
+.button {
+  &::before,
+  &::after {
+    content: "";
+    @include ad-value("height", 1.75, 1.5, 0, 1600, 1);
+    position: absolute;
+    display: block;
+    width: 35%;
+    border-radius: 10px;
+    background: #000;
+    transition: transform 0.4s $ease-content 0.1s, rotate 0.4s $ease-content 0s;
+  }
+  &::after {
+    transform: translateY(2.5px);
+  }
+  &::before {
+    transform: translateY(-2.5px);
+  }
+}
+.buttonActive {
+  &::before,
+  &::after {
+    content: "";
+    @include ad-value("height", 1.75, 1.5, 0, 1600, 1);
+    position: absolute;
+    display: block;
+    width: 35%;
+    border-radius: 10px;
+    transition: transform 0.4s $ease-content 0s, rotate 0.4s $ease-content 0.1s;
+    background: #000;
+    animation: menuClick 0.7s $ease-content 0s forwards;
+  }
+  &::after {
+    rotate: -45deg;
+    transform: translateY(0px);
+  }
+  &::before {
+    rotate: 45deg;
+    transform: translateY(0px);
+  }
+}
+@keyframes menuClick {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.15;
+  }
+  100% {
+    scale: 1;
+  }
+}

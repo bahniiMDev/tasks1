@@ -8,6 +8,7 @@ const DataBlock = React.forwardRef((_, ref) => {
   const arr = [...Array(42)].map((_, i) => i);
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
   const date = useSelector((state) => state.taskInfo.date);
+  const { animClick } = useSelector((state) => state.tolBar);
   const disp = useDispatch();
   const itemTagDisabledFunction = (index) => {
     if (regim !== 3) {
@@ -42,6 +43,8 @@ const DataBlock = React.forwardRef((_, ref) => {
           )} blue2-bg blue1-co size_4 height_3`}
           key={index}
           style={{
+            pointerEvents: animClick ? "all" : "none",
+
             transition: `scale 0.5s ease ${`${
               index * 0.01
             }s`}, opacity 0.5s ease ${`${index * 0.01}s`},

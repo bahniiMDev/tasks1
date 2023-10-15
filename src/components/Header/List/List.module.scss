@@ -1,0 +1,46 @@
+@use "../../../scss/utils" as *;
+@use "../../../scss/vars" as *;
+
+.today {
+  background: #fff;
+  width: 200px;
+  display: flex;
+  font-weight: 500;
+  @include ad-value("font-size", 13.5, 12.5, 0, 1600, 1);
+  pointer-events: none;
+  animation: button 0.6s $ease-info-button 0.3s forwards;
+  opacity: 0;
+  scale: 0.5;
+  transform-origin: center center;
+  align-items: center;
+  z-index: 2;
+  justify-content: flex-start;
+}
+.list {
+  height: 100%;
+  display: block;
+  aspect-ratio: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button {
+    height: 70%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      height: 45%;
+      rotate: 90deg;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+@keyframes button {
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}

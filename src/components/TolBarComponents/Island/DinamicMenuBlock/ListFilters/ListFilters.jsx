@@ -8,6 +8,7 @@ import { setHeight } from "../../../../../store/slices/tolBarSlice";
 const ListFilters = React.forwardRef((_, ref) => {
   const disp = useDispatch();
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
+  const { animClick } = useSelector((state) => state.tolBar);
   const { filters } = useSelector((state) => state.taskInfo);
 
   const [ghost, setGhost] = React.useState(0);
@@ -103,6 +104,7 @@ const ListFilters = React.forwardRef((_, ref) => {
           }}
           onClick={() => setArray(item, i)}
           style={{
+            pointerEvents: animClick && regim === 4 ? "all" : " none",
             transitionDelay:
               regim === 4
                 ? item.img === filters.img
