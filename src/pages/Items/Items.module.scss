@@ -3,15 +3,28 @@
 
 .container {
   width: 100%;
+  transform: rotate(180deg);
+  transition: height 0.8s $ease-content;
 }
 .task {
-  @include ad-value("height", 44, 40, 0, 1600, 1);
+  @include ad-value("height", 44, 44, 0, 1600, 1);
   background: #fff;
   color: #000;
+  position: relative;
   display: flex;
+  @include ad-value("margin-bottom", 20, 18, 0, 1600, 1);
   justify-content: flex-start;
   align-items: center;
   font-weight: 500;
   @include ad-value("font-size", 13.5, 12.5, 0, 1600, 1);
-  @include ad-value("margin-bottom", 7, 5, 0, 1600, 1);
+  transform: scaleX(0.5) translateY(50%) rotate(-180deg);
+  opacity: 0;
+  animation: taskStart 1s $ease-content forwards;
+}
+@keyframes taskStart {
+  100% {
+    @include ad-value("margin-bottom", 7, 7, 0, 1600, 1);
+    opacity: 1;
+    transform: scaleX(1) translateY(0%) rotate(-180deg);
+  }
 }

@@ -26,8 +26,6 @@ const Header = () => {
         <ul
           style={{
             right: "0",
-            background: "#fff",
-            color: "#000",
           }}
           className={`${activeMenuClass()} border-mini1 size_1`}>
           <p>
@@ -38,8 +36,6 @@ const Header = () => {
         <ul
           style={{
             left: "0",
-            background: "#000",
-            color: "#fff",
           }}
           className={`${activeListClass()} border-mini1 size_1`}>
           <p>

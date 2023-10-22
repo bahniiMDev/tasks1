@@ -13,13 +13,17 @@ import {
   setRegim,
 } from "../../../store/slices/tolBarSlice";
 import axios from "axios";
-import { pushItems } from "../../../store/slices/taskInfoCreateSlice";
+import {
+  pushItems,
+  setHeight,
+} from "../../../store/slices/taskInfoCreateSlice";
 
 const Island = () => {
   const regim = useSelector((state) => state.tolBar.regimIslandMenu);
   const obj = useSelector((state) => state.taskInfo);
   const { animClick, resize, border } = useSelector((state) => state.tolBar);
   const refFake = React.useRef(null);
+  const { items } = useSelector((state) => state.taskInfo);
 
   const disp = useDispatch();
   React.useEffect(() => {
@@ -45,18 +49,23 @@ const Island = () => {
 
   const clickCreate = async () => {
     disp(animationStane(false));
-    console.log(obj);
-
     axios.post("https://651ee37744a3a8aa4769288f.mockapi.io/items", {
       text: obj.text,
       img: obj.filters.img,
     });
+    fetch("https://651ee37744a3a8aa4769288f.mockapi.io/items")
+      .then((res) => res.json())
+      .then((r) => {
+        disp(setItems(r));
+        disp(setHeight(51 * r.length));
+      });
     disp(
       pushItems({
         text: obj.text,
         img: obj.filters.img,
       })
     );
+    disp(setHeight(51 * items.length + 44));
   };
 
   return (

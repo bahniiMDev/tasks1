@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   timeComplitionFrom: "",
   timeComplitionEnd: "",
+  height: 0,
   date: "",
   text: "",
   filters: {
@@ -18,6 +19,9 @@ export const taskInfoCreateSlice = createSlice({
   name: "tolBar",
   initialState,
   reducers: {
+    setHeight: (state, action) => {
+      state.height = action.payload;
+    },
     setTimeComplitionFrom: (state, action) => {
       state.timeComplitionFrom = action.payload;
     },
@@ -37,7 +41,7 @@ export const taskInfoCreateSlice = createSlice({
       state.filters = action.payload;
     },
     pushItems: (state, action) => {
-      state.items.push(action.payload);
+      state.items = [action.payload, ...state.items];
     },
   },
 });
@@ -45,6 +49,7 @@ export const taskInfoCreateSlice = createSlice({
 export const {
   setValue,
   pushItems,
+  setHeight,
   setItems,
   setTimeComplitionFrom,
   setTimeComplitionEnd,

@@ -32,7 +32,6 @@ input {
 
 .pages__container {
   @include ad-value("padding", 24, 20, 0, 1600, 1);
-
   max-width: 800px;
   margin: 0 auto;
   height: 100%;

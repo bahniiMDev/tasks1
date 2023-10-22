@@ -8,13 +8,14 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: 0.5s $ease-content;
   justify-content: center;
-  animation: tolBarPreload 0.8s $ease-info-button forwards;
-  transform: translateY(70%);
+  animation: tolBarPreload 0.8s $ease-content forwards;
+  transform: translateY(40%);
   opacity: 0;
   will-change: auto;
 }
@@ -62,6 +63,8 @@
   bottom: 100%;
   overflow: auto;
   scroll-margin: 4px;
+  z-index: 100;
+  position: relative;
   &::-webkit-scrollbar {
     width: 12px;
     background: transparent;
